@@ -7,6 +7,7 @@ $(document).ready(function(){
     countedNumbers = getNumbers(index);
     console.log(countedNumbers);
     countedNumbers = ping(countedNumbers);
+    countedNumbers = pong(countedNumbers);
     displayNums(countedNumbers);
   });
 });
@@ -29,6 +30,15 @@ function ping(numbers){
   numbers.forEach(function(number, i) {
     if(number % 3 === 0){
       numbers[i] = "ping";
+    }
+  });
+  return numbers;
+};
+
+function pong(numbers){
+  numbers.forEach(function(number, i) {
+    if(number % 5 === 0){
+      numbers[i] = "pong";
     }
   });
   return numbers;
