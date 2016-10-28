@@ -1,3 +1,4 @@
+//UI Logic
 $(document).ready(function(){
   $("form").submit(function(event){
     event.preventDefault();
@@ -11,11 +12,21 @@ $(document).ready(function(){
   });
 });
 
+//Business Logic
+
+//Displays the array
 function displayNums(numbers){
-  console.log(numbers);
-  $("#result").text(numbers);
+  var numberStrings = [""];
+  numbers.forEach(function(number, i) {
+    numberStrings[i] = numbers[i].toString();
+    if (numberStrings[i] === "ping")
+      numberStrings[i].fontColor(red);
+  });
+  console.log(numberStrings);
+  $("#result").text(numberStrings);
 };
 
+//Populates the array
 function getNumbers(index) {
   var numbers = [];
 
@@ -25,6 +36,7 @@ function getNumbers(index) {
   return numbers;
 };
 
+//Replaces multiples of 3
 function ping(numbers){
   numbers.forEach(function(number, i) {
     if(number % 3 === 0){
@@ -34,6 +46,7 @@ function ping(numbers){
   return numbers;
 };
 
+//Replaces multiples of 5
 function pong(numbers){
   numbers.forEach(function(number, i) {
     if(number % 5 === 0){
@@ -43,6 +56,7 @@ function pong(numbers){
   return numbers;
 };
 
+//Replaces multiples of 15 and then calls ping and pong
 function pingPong(numbers){
   numbers.forEach(function(number, i) {
     if(number % 3 === 0 && number % 5 === 0){
