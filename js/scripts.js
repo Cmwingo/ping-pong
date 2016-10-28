@@ -7,8 +7,10 @@ $(document).ready(function(){
     var countedNumbers = [];
     countedNumbers = getNumbers(index);
     console.log(countedNumbers);
-    pingPong(countedNumbers);
-    displayNums(countedNumbers);
+    if(checkInput(userInput)) {
+      pingPong(countedNumbers);
+      displayNums(countedNumbers);
+    }
   });
 });
 
@@ -77,4 +79,19 @@ function pingPong(numbers){
   numbers = ping(numbers);
   numbers = pong(numbers);
   return numbers;
+};
+
+//Makes sure the user enters a reasonable non-negative number
+function checkInput(input) {
+  if (typeof(parseInt(input)) === "number") {
+    if (input >= 1 && input <= 3999){
+      return true;
+    } else {
+        alert("You obviously need limits. Keep the range between 0 and 4000")
+        return false;
+      }
+  } else {
+    alert("This game only works if you put in numbers")
+    return false;
+    }
 };

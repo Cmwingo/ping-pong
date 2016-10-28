@@ -21,7 +21,16 @@ _This program will take a number from the user and then populate an array from 1
 * _It will replace multiples of 15 with pong_
   * _Example Input: 20_
   * _Example Output: 1,2,ping,4,pong...14,ping-pong_
-
+* _It will style the ping, pong, and ping-pong outputs in individual custom styles_
+  * _Example Input: 10_
+  * _Example Output: 1,2,PING,4,PONG...29, PING-PONG_
+* _It will check the user's input for non-numeric values_
+  * _Example Input: "John"_
+  * _Example Output: "John is not a number"_
+* _It will check that the user's number is between 0 and 4000_
+  * _Example Input: 1,000,000,000,000_
+  * _Example Output: "That's a little excessive"_
+* _It will add a graphic at the end of the count_
 
 ## Setup/Installation Requirements
 
