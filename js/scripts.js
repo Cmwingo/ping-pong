@@ -3,12 +3,16 @@ $(document).ready(function(){
     event.preventDefault();
     var userInput = $("#countTo").val();
     var index = parseInt(userInput);
-    getNumbers(index);
+    var countedNumbers = [];
+    countedNumbers = getNumbers(index);
+    console.log(countedNumbers);
+    displayNums(countedNumbers);
   });
 });
 
 function displayNums(numbers){
-
+  console.log(numbers);
+  $("#result").text(numbers);
 };
 
 function getNumbers(index) {
@@ -17,5 +21,5 @@ function getNumbers(index) {
   for(i = 0; i < index; i++){
     numbers.push(i+1);
   }
-  console.log(numbers);
-}
+  return numbers;
+};
