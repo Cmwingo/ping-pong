@@ -25,16 +25,31 @@ function displayNums(numbers){
 
   numbers.forEach(function(number, i) {
     numberStrings[i] = numbers[i].toString();
-    if (numberStrings[i] === "ping"){
-      $("#result").append('<span class="ping">Ping!, </span>');
-    } else if (numberStrings[i] === "pong"){
-        $("#result").append('<span class="pong">Pong!, </span>');
-    } else if (numberStrings[i] === "ping-pong"){
-        $("#result").append('<span class="ping-pong">Ping-Pong!, </span>');
-    } else {
-      $("#result").append(numberStrings[i] + ", ");
-    }
-  });
+    console.log(numbers[i+1]);
+    if(numbers[i+1] === undefined){
+      if (numberStrings[i] === "ping"){
+        $("#result").append('<span class="ping">Ping!</span>');
+      } else if (numberStrings[i] === "pong"){
+          $("#result").append('<span class="pong">Pong!</span>');
+      } else if (numberStrings[i] === "ping-pong"){
+          $("#result").append('<span class="ping-pong">Ping-Pong!</span>');
+      } else {
+        $("#result").append(numberStrings[i]);
+      }
+      }else {
+        if (numberStrings[i] === "ping"){
+          $("#result").append('<span class="ping">Ping!, </span>');
+        } else if (numberStrings[i] === "pong"){
+            $("#result").append('<span class="pong">Pong!, </span>');
+        } else if (numberStrings[i] === "ping-pong"){
+            $("#result").append('<span class="ping-pong">Ping-Pong!, </span>');
+        } else if (numbers[i+1] === undefined){
+          $("#result").append(numbers[i]);
+        } else {
+          $("#result").append(numberStrings[i] + ", ");
+        }
+      }
+    });
   console.log(numberStrings);
   $("#results").append('<img src="img/end-round.png"/>');
 };
