@@ -2,6 +2,10 @@ body {
     text-align: center;
     font-size: 300%;
 }
+#results {
+  font-size: 80%;
+  text-align: center;
+}
 
 @media screen and (min-width: 480px) {
     body {
@@ -11,10 +15,10 @@ body {
     label {
       font-size: 200%;
     }
-}
-#results {
-  font-size: 125%;
-  text-align: center;
+    #results {
+      font-size: 225%;
+      text-align: center;
+    }
 }
 
 .ping {
