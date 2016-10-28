@@ -10,14 +10,20 @@
 
   <body>
     <div class="container">
-      <form>
-        <div class="form-group">
-          <label for="countTo">Number to count to:</label>
-          <input id="countTo" class="form-control" type="text">
-          <button type="submit" class="btn btn-success">Ping Pong</button>
+      <div class="row">
+        <div class="col-md-12">
+          <form>
+            <div class="form-group">
+              <label for="countTo">Number to count to:</label>
+              <input id="countTo" class="form-control" type="text">
+              <button type="submit" class="btn btn-success">Ping Pong</button>
+            </div>
+            <div id="results">
+              <p><span id="result"></span></p>
+            </div>
+          </form>
         </div>
-        <span id="result"></span>
-      </form>
+      </div>
     </div>
   </body>
 </html>

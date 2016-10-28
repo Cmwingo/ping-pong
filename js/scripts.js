@@ -6,6 +6,7 @@ $(document).ready(function(){
     var countedNumbers = [];
     countedNumbers = getNumbers(index);
     console.log(countedNumbers);
+    countedNumbers = ping(countedNumbers);
     displayNums(countedNumbers);
   });
 });
@@ -21,5 +22,14 @@ function getNumbers(index) {
   for(i = 0; i < index; i++){
     numbers.push(i+1);
   }
+  return numbers;
+};
+
+function ping(numbers){
+  numbers.forEach(function(number, i) {
+    if(number % 3 === 0){
+      numbers[i] = "ping";
+    }
+  });
   return numbers;
 };
