@@ -1,11 +1,25 @@
 body {
     text-align: center;
     font-size: 300%;
+    background-image: url(../img/table.png);
+    background-size: cover;
 }
 #results {
   font-size: 80%;
   text-align: center;
 }
+.imgWrapper {
+  height: 200px;
+  width: 100%;
+  background-color: green;
+  background-size: 100%;
+  background-position: top;
+}
+
+.imgWrapper img {
+  background-color: green;
+}
+
 
 @media screen and (min-width: 480px) {
     body {
@@ -22,17 +36,17 @@ body {
 }
 
 .ping {
-  color: red;
+  color: black;
   font-size: 150%;
 }
 
 .pong {
-  color: blue;
+  color: white;
   font-size: 150%;
 }
 
 .ping-pong {
-  color: purple;
+  color: gray;
   font-size: 150%;
 }
 
@@ -50,11 +64,16 @@ h1 {
   background-image: url(../img/ping-pong.png);
   background-position:bottom;;
   background-size:contain;
-  background-color: white;
+  background-color: darkgreen;
   color: lightgray;
 }
 
 p {
   font-family: "Gloria+Hallelujah";
   font-size: 130%;
+}
+
+#ping-quote {
+  font-style: italic;
+  color: black;
 }

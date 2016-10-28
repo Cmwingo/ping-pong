@@ -51,7 +51,9 @@ function displayNums(numbers){
       }
     });
   console.log(numberStrings);
-  $("#results").append('<img src="img/end-round.png"/>');
+  $("#results").after().append('<div class="imgWrapper"></div>');
+  $(".imgWrapper").css({"background-image":"url(img/end-round.png)", "background-color":"green"});
+  // $("#results").css("background-color","black");
 };
 
 //Populates the array
