@@ -17,13 +17,22 @@ $(document).ready(function(){
 //Displays the array
 function displayNums(numbers){
   var numberStrings = [""];
+
+  $("#result").text("");
   numbers.forEach(function(number, i) {
     numberStrings[i] = numbers[i].toString();
-    if (numberStrings[i] === "ping")
-      numberStrings[i].fontColor(red);
+    if (numberStrings[i] === "ping"){
+      $("#result").append('<span class="ping">Ping!, </span>');
+    } else if (numberStrings[i] === "pong"){
+        $("#result").append('<span class="pong">Pong!, </span>');
+    } else if (numberStrings[i] === "ping-pong"){
+        $("#result").append('<span class="ping-pong">Ping-Pong!, </span>');
+    } else {
+      $("#result").append(numberStrings[i] + ", ");
+    }
   });
   console.log(numberStrings);
-  $("#result").text(numberStrings);
+
 };
 
 //Populates the array

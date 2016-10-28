@@ -1,3 +1,46 @@
 #results {
-  width: 50%;
+  font-size: 125%;
+  text-align: center;
+}
+
+.ping {
+  color: red;
+  font-size: 150%;
+}
+
+.pong {
+  color: blue;
+  font-size: 150%;
+}
+
+.ping-pong {
+  color: purple;
+  font-size: 150%;
+}
+
+.btn {
+  margin: 5%
+}
+
+body {
+  text-align: center;
+}
+
+h1 {
+  font-weight: bold;
+  margin: 5%;
+  font-family: "Gloria+Hallelujah";
+}
+
+.jumbotron {
+  background-image: url(../img/ping-pong.png);
+  background-position:bottom;;
+  background-size:contain;
+  background-color: white;
+  color: lightgray;
+}
+
+p {
+  font-family: "Gloria+Hallelujah";
+  font-size: 130%;
 }
