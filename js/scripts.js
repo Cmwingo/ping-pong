@@ -19,6 +19,8 @@ function displayNums(numbers){
   var numberStrings = [""];
 
   $("#result").text("");
+  $("#results img").remove();
+
   numbers.forEach(function(number, i) {
     numberStrings[i] = numbers[i].toString();
     if (numberStrings[i] === "ping"){
@@ -32,7 +34,7 @@ function displayNums(numbers){
     }
   });
   console.log(numberStrings);
-
+  $("#results").append('<img src="img/end-round.png"/>');
 };
 
 //Populates the array
