@@ -21,7 +21,7 @@ function displayNums(numbers){
   var numberStrings = [""];
 
   $("#result").text("");
-  $("#results img").remove();
+  $(".imgWrapper").remove();
 
   numbers.forEach(function(number, i) {
     numberStrings[i] = numbers[i].toString();
