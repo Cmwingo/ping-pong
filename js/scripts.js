@@ -6,8 +6,7 @@ $(document).ready(function(){
     var countedNumbers = [];
     countedNumbers = getNumbers(index);
     console.log(countedNumbers);
-    countedNumbers = ping(countedNumbers);
-    countedNumbers = pong(countedNumbers);
+    pingPong(countedNumbers);
     displayNums(countedNumbers);
   });
 });
@@ -41,5 +40,16 @@ function pong(numbers){
       numbers[i] = "pong";
     }
   });
+  return numbers;
+};
+
+function pingPong(numbers){
+  numbers.forEach(function(number, i) {
+    if(number % 3 === 0 && number % 5 === 0){
+      numbers[i] = "ping-pong";
+    }
+  });
+  numbers = ping(numbers);
+  numbers = pong(numbers);
   return numbers;
 };
