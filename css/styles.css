@@ -9,16 +9,9 @@ body {
   font-size: 80%;
   text-align: center;
 }
-.imgWrapper {
-  height: 200px;
-  width: 100%;
-  background-color: green;
-  background-size: 100%;
-  background-position: top;
-}
 
-.imgWrapper img {
-  background-color: green;
+body img {
+  width: 100%;
 }
 
 .jumbotron h1 {

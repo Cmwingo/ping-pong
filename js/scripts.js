@@ -2,6 +2,7 @@
 $(document).ready(function(){
   $("form").submit(function(event){
     event.preventDefault();
+    
     var userInput = $("#countTo").val();
     var index = parseInt(userInput);
     var countedNumbers = [];
@@ -10,7 +11,7 @@ $(document).ready(function(){
     countedNumbers = getNumbers(index);
     if(checkInput(userInput)) {
       $("#result").text("");
-      $(".imgWrapper").remove();
+      $("#results img").remove();
       countedNumbers = pingPong(countedNumbers);
       countedNumbers.forEach(function(number, i) {
         numberStrings[i] = countedNumbers[i].toString();
@@ -38,8 +39,7 @@ $(document).ready(function(){
             }
           }
         });
-      $("#results").after().append('<div class="imgWrapper"></div>');
-      $(".imgWrapper").css({"background-image":"url(img/end-round.png)", "background-color":"green"});
+      $("#results").append('<img src="img/end-round.png">');
     }
   });
 });
