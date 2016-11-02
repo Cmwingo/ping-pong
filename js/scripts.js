@@ -5,56 +5,47 @@ $(document).ready(function(){
     var userInput = $("#countTo").val();
     var index = parseInt(userInput);
     var countedNumbers = [];
+    var numberStrings = [];
+
     countedNumbers = getNumbers(index);
-    console.log(countedNumbers);
     if(checkInput(userInput)) {
-      pingPong(countedNumbers);
-      displayNums(countedNumbers);
+      $("#result").text("");
+      $(".imgWrapper").remove();
+      countedNumbers = pingPong(countedNumbers);
+      countedNumbers.forEach(function(number, i) {
+        numberStrings[i] = countedNumbers[i].toString();
+        if(countedNumbers[i+1] === undefined){
+          if (numberStrings[i] === "ping"){
+            $("#result").append('<span class="ping">Ping!</span>');
+          } else if (numberStrings[i] === "pong"){
+              $("#result").append('<span class="pong">Pong!</span>');
+          } else if (numberStrings[i] === "ping-pong"){
+              $("#result").append('<span class="ping-pong">Ping-Pong!</span>');
+          } else {
+            $("#result").append(numberStrings[i]);
+          }
+          }else {
+            if (numberStrings[i] === "ping"){
+              $("#result").append('<span class="ping">Ping!, </span>');
+            } else if (numberStrings[i] === "pong"){
+                $("#result").append('<span class="pong">Pong!, </span>');
+            } else if (numberStrings[i] === "ping-pong"){
+                $("#result").append('<span class="ping-pong">Ping-Pong!, </span>');
+            } else if (countedNumbers[i+1] === undefined){
+              $("#result").append(countedNumbers[i]);
+            } else {
+              $("#result").append(numberStrings[i] + ", ");
+            }
+          }
+        });
+      $("#results").after().append('<div class="imgWrapper"></div>');
+      $(".imgWrapper").css({"background-image":"url(img/end-round.png)", "background-color":"green"});
     }
   });
 });
 
 //Business Logic
 
-//Displays the array
-function displayNums(numbers){
-  var numberStrings = [""];
-
-  $("#result").text("");
-  $(".imgWrapper").remove();
-
-  numbers.forEach(function(number, i) {
-    numberStrings[i] = numbers[i].toString();
-    console.log(numbers[i+1]);
-    if(numbers[i+1] === undefined){
-      if (numberStrings[i] === "ping"){
-        $("#result").append('<span class="ping">Ping!</span>');
-      } else if (numberStrings[i] === "pong"){
-          $("#result").append('<span class="pong">Pong!</span>');
-      } else if (numberStrings[i] === "ping-pong"){
-          $("#result").append('<span class="ping-pong">Ping-Pong!</span>');
-      } else {
-        $("#result").append(numberStrings[i]);
-      }
-      }else {
-        if (numberStrings[i] === "ping"){
-          $("#result").append('<span class="ping">Ping!, </span>');
-        } else if (numberStrings[i] === "pong"){
-            $("#result").append('<span class="pong">Pong!, </span>');
-        } else if (numberStrings[i] === "ping-pong"){
-            $("#result").append('<span class="ping-pong">Ping-Pong!, </span>');
-        } else if (numbers[i+1] === undefined){
-          $("#result").append(numbers[i]);
-        } else {
-          $("#result").append(numberStrings[i] + ", ");
-        }
-      }
-    });
-  console.log(numberStrings);
-  $("#results").after().append('<div class="imgWrapper"></div>');
-  $(".imgWrapper").css({"background-image":"url(img/end-round.png)", "background-color":"green"});
-  // $("#results").css("background-color","black");
-};
 
 //Populates the array
 function getNumbers(index) {
@@ -100,15 +91,14 @@ function pingPong(numbers){
 
 //Makes sure the user enters a reasonable non-negative number
 function checkInput(input) {
-  if (typeof(parseInt(input)) === "number") {
-    if (input >= 1 && input <= 3999){
-      return true;
-    } else {
-        alert("You obviously need limits. Keep the range between 0 and 4000")
-        return false;
-      }
-  } else {
-    alert("This game only works if you put in numbers")
+  input = parseInt(input);
+  if(typeof(input) != "number" || isNaN(input)) {
+    alert("This game only works if you put in numbers");
     return false;
-    }
+  } else if(input < 0 || input > 4000) {
+    alert("You obviously need limits. Keep the range between 0 and 4000");
+    return false;
+  } else {
+    return true;
+  }
 };
