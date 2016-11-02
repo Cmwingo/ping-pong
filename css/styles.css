@@ -1,8 +1,9 @@
 body {
     text-align: center;
     font-size: 300%;
-    background-image: url(../img/table.png);
+    background-image: url(../img/table.jpg);
     background-size: cover;
+    color: black;
 }
 #results {
   font-size: 80%;
@@ -18,6 +19,10 @@ body {
 
 .imgWrapper img {
   background-color: green;
+}
+
+.jumbotron h1 {
+  text-shadow: 4px 4px black;
 }
 
 
@@ -46,7 +51,7 @@ body {
 }
 
 .ping-pong {
-  color: gray;
+  color: dimgray;
   font-size: 150%;
 }
 
@@ -64,7 +69,7 @@ h1 {
   background-image: url(../img/ping-pong.png);
   background-position:bottom;;
   background-size:contain;
-  background-color: darkgreen;
+  background-color: lightskyblue;
   color: lightgray;
 }
 
